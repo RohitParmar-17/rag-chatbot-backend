@@ -16,7 +16,11 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: ['https://rag-chatbot-frontend-1bd5.onrender.com', 'http://localhost:3000'],
+  credentials: true,
+  optionsSuccessStatus: 200
+}));
 app.use(express.json());
 
 // Initialize services
